@@ -1,0 +1,14 @@
+CC = gcc
+
+CFLAGS = -Wall -g
+
+all: meu_navegador meu_servidor
+
+meu_navegador: cliente.c
+	$(CC) $(CFLAGS) -o meu_navegador cliente.c
+
+meu_servidor: servidor.c
+	$(CC) $(CFLAGS) -o -lpthread meu_servidor servidor.c
+
+clean:
+	rm -f meu_navegador meu_servidor *.o
