@@ -18,6 +18,10 @@
 #define PORT 8080
 #define BUFFER_SIZE 4096
 
+void send_404_response(int client_fd);
+void send_directory_listing(int client_fd, const char *dir_path, const char *uri_path);
+void send_file_response(int client_fd, const char *file_name, const char *file_ext);
+
 const char *get_file_extension(const char *file_name)
 {
     const char *dot = strrchr(file_name, '.');
